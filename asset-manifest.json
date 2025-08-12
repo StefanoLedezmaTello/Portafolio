@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Portafolio/static/css/main.3690ce8a.css",
+    "main.js": "/Portafolio/static/js/main.efe52edf.js",
+    "static/js/453.9da22925.chunk.js": "/Portafolio/static/js/453.9da22925.chunk.js",
+    "static/media/CV-Stefano.pdf": "/Portafolio/static/media/CV-Stefano.1fd9023bb10909e0ef6e.pdf",
+    "index.html": "/Portafolio/index.html",
+    "main.3690ce8a.css.map": "/Portafolio/static/css/main.3690ce8a.css.map",
+    "main.efe52edf.js.map": "/Portafolio/static/js/main.efe52edf.js.map",
+    "453.9da22925.chunk.js.map": "/Portafolio/static/js/453.9da22925.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3690ce8a.css",
+    "static/js/main.efe52edf.js"
+  ]
+}
