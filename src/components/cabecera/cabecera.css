@@ -1,0 +1,100 @@
+/* cabecera.css */
+
+.cabecera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 20rem;
+  background-color: #0d6efd;
+  color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.cabecera__foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid white;
+}
+
+.cabecera__nombre {
+  margin: 0 0 0.25rem;
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.cabecera__perfil {
+  margin: 0 0 1rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.cabecera__contacto {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.cabecera__contacto p {
+  margin: 0.3rem 0;
+  font-size: 1.2rem;
+}
+
+.cabecera__contacto a {
+  color: white;
+  text-decoration: underline;
+}
+
+.cabecera__btn-cv {
+  background-color: white;
+  color: #0d6efd;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 1.4rem;
+}
+.cabecera__btn-cv:hover {
+    background-color:rgb(218, 218, 218) ;
+}
+
+.cabecera__tecnologias {
+  width: 100%;
+}
+
+.cabecera__tecnologias h3 {
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cabecera__lista-tecnologias {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.cabecera__lista-tecnologias li {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}

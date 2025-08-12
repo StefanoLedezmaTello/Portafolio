@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import PreviewModal from '../../shared/modal'; // Ajusta la ruta según tu estructura
+import PreviewModal from '../../shared/modal'; 
 import cvFile from '../../assets/documentos/CV-Stefano.pdf';
+import './cabecera.css';  // Importa el CSS
 
 const data = {
   nombre: "Stefano Ledezma",
@@ -23,79 +24,38 @@ const Cabecera = () => {
   return (
     <>
       {/* Sidebar */}
-      <header style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        height: '100vh',
-        width: '17rem',
-        backgroundColor: '#0d6efd',
-        color: 'white',
-        padding: '2rem 1.5rem',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        boxSizing: 'border-box',
-        zIndex: 1000,
-        overflowY: 'auto'
-      }}>
+      <header className="cabecera">
         <img
           src={data.fotoPerfil}
           alt={`${data.nombre} foto de perfil`}
-          style={{
-            width: '120px',
-            height: '120px',
-            borderRadius: '50%',
-            objectFit: 'cover',
-            marginBottom: '1rem',
-            border: '3px solid white'
-          }}
+          className="cabecera__foto"
         />
-        <h1 style={{ margin: '0 0 0.25rem', fontSize: '1.6rem', textAlign: 'center' }}>
-          {data.nombre}
-        </h1>
-        <p style={{ margin: '0 0 1rem', fontStyle: 'italic', textAlign: 'center' }}>
-          {data.perfil}
-        </p>
+        <h1 className="cabecera__nombre">{data.nombre}</h1>
+        <p className="cabecera__perfil">{data.perfil}</p>
 
-        <div style={{ width: '100%', marginBottom: '1.5rem' }}>
+        <div className="cabecera__contacto">
           <p><strong>📞</strong> {data.telefono}</p>
           <p><strong>✉️</strong> {data.correo}</p>
           <p>
-            <strong>🐱</strong> <a href={data.github} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }}>GitHub</a>
+            <strong>🐱</strong> <a href={data.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           </p>
           <p>
-            <strong>🔗</strong> <a href={data.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'underline' }}>LinkedIn</a>
+            <strong>🔗</strong> <a href={data.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </p>
         </div>
 
         <button
           onClick={() => setModalOpen(true)}
-          style={{
-            backgroundColor: 'white',
-            color: '#0d6efd',
-            padding: '0.6rem 1.2rem',
-            borderRadius: '20px',
-            fontWeight: 'bold',
-            border: 'none',
-            cursor: 'pointer',
-            marginBottom: '2rem',
-            width: '100%',
-          }}
+          className="cabecera__btn-cv"
         >
           Ver CV
         </button>
 
-        <div style={{ width: '100%' }}>
-          <h3 style={{ borderBottom: '1px solid white', paddingBottom: '0.5rem', marginBottom: '1rem', textAlign: 'center' }}>
-            Tecnologías
-          </h3>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexWrap: 'wrap', gap: '0.5rem', justifyContent: 'center' }}>
+        <div className="cabecera__tecnologias">
+          <h3>Tecnologías</h3>
+          <ul className="cabecera__lista-tecnologias">
             {data.tecnologias.map((tech, i) => (
-              <li key={i} style={{ backgroundColor: 'rgba(255, 255, 255, 0.25)', padding: '0.3rem 0.8rem', borderRadius: '12px', fontSize: '0.85rem' }}>
-                {tech}
-              </li>
+              <li key={i}>{tech}</li>
             ))}
           </ul>
         </div>
