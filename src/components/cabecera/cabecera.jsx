@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PreviewModal from '../../shared/modal'; 
 import cvFile from '../../assets/documentos/CV-Stefano.pdf';
-import './cabecera.css';
 
 const data = {
   nombre: "Stefano Ledezma",

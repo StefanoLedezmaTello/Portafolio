@@ -1,6 +1,410 @@
+.App{
+    color: white;
+}
+
 .App .contenedor{
     margin-left: 20rem
 }
 .colorCard{  
-    background-color: rgba(88, 75, 143, 0.85)
+    background-color: rgba(70, 59, 117, 0.95)
+}
+
+/*Cabecera*/
+.cabecera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 20rem;
+  color: white;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 1000;
+  overflow-y: auto;
+  background: linear-gradient(135deg, #1e1e2f, #2b2d42, #3a3d5c, #584b8f);
+  background-size: 600% 600%;
+  animation: gradientCabecera 10s ease infinite;
+  transition: transform 0.3s ease;
+}
+
+@keyframes gradientCabecera {
+  0%   { background-position: 100% 0%; }
+  50%  { background-position: 0% 100%; }
+  100% { background-position: 100% 0%; }
+}
+
+.cabecera__foto {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid white;
+}
+
+.cabecera__nombre {
+  margin: 0 0 0.25rem;
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.cabecera__perfil {
+  margin: 0 0 1rem;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.cabecera__contacto {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.cabecera__contacto p {
+  margin: 0.3rem 0;
+  font-size: 1.2rem;
+}
+
+.cabecera__contacto a {
+  color: white;
+  text-decoration: underline;
+}
+
+.cabecera__btn-cv {
+  background-color: white;
+  color: #0d6efd;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  width: 100%;
+  font-size: 1.4rem;
+}
+.cabecera__btn-cv:hover {
+    background-color:rgb(218, 218, 218) ;
+}
+
+.cabecera__tecnologias {
+  width: 100%;
+}
+
+.cabecera__tecnologias h3 {
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cabecera__lista-tecnologias {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.cabecera__lista-tecnologias li {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.hamburger-btn {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2000;
+  background-color: #584b8f;
+  color: white;
+  font-size: 2rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .cabecera {
+    transform: translateX(-100%);
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .cabecera.cabecera--open {
+    transform: translateX(0);
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .App .contenedor {
+    margin-left: 0;
+    padding-top: 6rem; 
+  }
+}
+
+/*headerMovil*/
+.header-movil {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: rgba(88, 75, 143, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1500;
+  gap: 1rem;
+}
+
+.header-movil__foto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+.header-movil__info h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.header-movil__info p {
+  margin: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .header-movil {
+    display: flex;
+  }
+}
+@media (min-width: 769px) {
+  .header-movil {
+    display: none;
+  }
+}
+
+/*datosAcademicos*/
+.datos-academicos {
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.datos-academicos h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.formacion-academica {
+  margin-bottom: 2rem;
+}
+
+.formacion-academica h3 {
+  margin-bottom: 1rem;
+}
+
+.formacion-academica ul {
+  list-style: none;
+  padding: 0;
+}
+
+.formacion-academica li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.certificaciones h3 {
+  margin-bottom: 1rem;
+}
+
+.certificaciones ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.certificaciones li {
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.formacionCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Botones de certificados individuales */
+.btn-certificado {
+  margin-top: 0.5rem;
+  background-color: #584b8f;
+  color: white; /* Color armonioso con tu cabecera */
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-certificado:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-certificados-container {
+  margin-top: 1.5rem;
+  left: 1rem
+}
+
+.btn-certificado-total {
+  background-color: #584b8f;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-certificado-total:hover {
+  background-color: #7b5cf3;
+}
+
+
+/*experienciaLaboral*/
+.experiencia-container {
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.experiencia-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.experiencia-article {
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experiencia-article h3 {
+  margin-bottom: 0.25rem;
+}
+
+.experiencia-article h4 {
+  margin-top: 0;
+  font-weight: normal;
+  color: #cee169;
+}
+
+.experiencia-article h5 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.experiencia-article ul {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.experiencia-article li {
+  margin-bottom: 0.5rem;
+}
+
+/*Proyectos*/
+.proyectos-container {
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.proyectos-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.proyectos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.proyecto-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.proyecto-card-content {
+  padding: 1rem;
+}
+
+.proyecto-card-content h3 {
+  margin-bottom: 0.5rem;
+}
+
+.proyecto-card-content p {
+  margin-bottom: 0.5rem;
+}
+
+.proyecto-btn {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #584b8f; 
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.proyecto-btn:hover {
+  background: #7b5cf3;  
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/*breakPoint*/
+
+@media (max-width: 768px) {
+.App .contenedor{
+    margin-left: 0rem
+}
 }

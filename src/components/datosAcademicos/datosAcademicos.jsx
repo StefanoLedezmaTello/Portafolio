@@ -1,17 +1,19 @@
-import React from 'react';
+import React from "react";
 
 const datosAcademicos = {
   formacion: [
     {
       titulo: "Ingeniería en Informática",
       institucion: "Duoc UC",
-      periodo: "2018 - 2022"
+      periodo: "2018 - 2022",
+      boton: "Ver Certificado de Título"
     },
     {
       titulo: "Diplomado en Ciberseguridad",
       institucion: "Duoc UC",
-      periodo: "2023 - 2024"
-    }
+      periodo: "2023 - 2024",
+      boton: "Ver Certificado de Ciberseguridad"
+    },
   ],
   certificaciones: [
     "Inteligencia de Negocios",
@@ -21,38 +23,52 @@ const datosAcademicos = {
     "Programación de Software",
     "Arquitectura de Software",
     "Calidad de Software",
-    "Certificado internacional .NET – Nivel Intermedio"
-  ]
+    "Certificado internacional .NET – Nivel Intermedio",
+  ],
 };
 
 const Academico = () => {
+  const handleDescargarCertificados = () => {
+    // Aquí podrías implementar la descarga de un zip o redirección a un PDF
+    alert("Descargando todas las certificaciones...");
+  };
+
   return (
-    <section style={{ padding: '2rem', backgroundColor: '#fff', boxSizing: 'border-box' }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Datos Académicos y Certificaciones</h2>
-      
+    <section className="datos-academicos">
+      <h2>Datos Académicos y Certificaciones</h2>
+
       {/* Formación académica */}
-      <div style={{ marginBottom: '2rem' }}>
+      <div className="formacion-academica">
         <h3>Formación Académica</h3>
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+        <ul>
           {datosAcademicos.formacion.map((item, index) => (
-            <li key={index} style={{ marginBottom: '1rem', padding: '1rem', background: '#f9f9f9', borderRadius: '6px', boxShadow: '0 1px 4px rgba(0,0,0,0.1)' }}>
-              <strong>{item.titulo}</strong> <br />
-              {item.institucion} | {item.periodo}
+            <li className="formacionCard colorCard" key={index}>
+              <div>
+                <strong>{item.titulo}</strong> <br />
+                {item.institucion} | {item.periodo}
+              </div>
+              <div>
+                <button className="btn-certificado">{item.boton}</button>
+              </div>
             </li>
           ))}
         </ul>
       </div>
 
       {/* Certificaciones */}
-      <div>
+      <div className="certificaciones">
         <h3>Certificaciones</h3>
-        <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+        <ul>
           {datosAcademicos.certificaciones.map((cert, index) => (
-            <li key={index} style={{ background: '#eef6ff', padding: '0.8rem 1rem', borderRadius: '6px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-              {cert}
-            </li>
+            <li className="formacionCard colorCard" key={index}>{cert}</li>
           ))}
         </ul>
+
+        <div className="btn-certificados-container">
+          <button className="btn-certificado-total" onClick={handleDescargarCertificados}>
+            Descargar todas las certificaciones
+          </button>
+        </div>
       </div>
     </section>
   );

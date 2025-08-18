@@ -1,5 +1,4 @@
 import React from "react";
-import "./headerMovil.css";
 
 const HeaderMovil = ({ menuOpen, data }) => {
   // Solo mostrar si el menú NO está abierto
