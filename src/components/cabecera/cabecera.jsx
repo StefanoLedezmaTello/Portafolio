@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PreviewModal from '../../shared/modal'; 
 import cvFile from '../../assets/documentos/CV-Stefano.pdf';
-import './cabecera.css';  // Importa el CSS
+import './cabecera.css';
 
 const data = {
   nombre: "Stefano Ledezma",
@@ -18,13 +18,21 @@ const data = {
   ],
 };
 
-const Cabecera = () => {
+const Cabecera = ({ menuOpen, setMenuOpen }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
+      {/* Botón hamburguesa para móvil */}
+      <button 
+        className="hamburger-btn" 
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        ☰
+      </button>
+
       {/* Sidebar */}
-      <header className="cabecera">
+      <header className={`cabecera ${menuOpen ? 'cabecera--open' : ''}`}>
         <img
           src={data.fotoPerfil}
           alt={`${data.nombre} foto de perfil`}
