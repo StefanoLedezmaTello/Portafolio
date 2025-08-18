@@ -3,7 +3,7 @@ import SobreMi from './components/sobreMi/sobreMi';
 import Proyectos from './components/proyectos/proyectos';
 import Experiencia from './components/experiencia/experiencia';
 import DatosAcademicos from './components/datosAcademicos/datosAcademicos';
-
+import Particulas from "./components/particulas";
 
 
 
@@ -12,6 +12,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+    <Particulas></Particulas> 
       <Cabecera></Cabecera>
       <div className="contenedor" >
        <SobreMi></SobreMi>

@@ -1,4 +1,5 @@
 import React from 'react';
+import './experienciaLaboral.css';
 
 const experiencia = [
   {
@@ -33,12 +34,12 @@ const experiencia = [
 
 const ExperienciaLaboral = () => {
   return (
-    <section style={{ padding: '2rem', boxSizing: 'border-box', backgroundColor: '#f9f9f9' }}>
-      <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Experiencia Laboral</h2>
+    <section className="experiencia-container">
+      <h2>Experiencia Laboral</h2>
       {experiencia.map(({ empresa, cargo, periodo, responsabilidades, logros }, idx) => (
-        <article key={idx} style={{ marginBottom: '2.5rem', padding: '1rem', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 1px 4px rgba(0,0,0,0.1)' }}>
-          <h3 style={{ marginBottom: '0.25rem' }}>{cargo}</h3>
-          <h4 style={{ marginTop: 0, fontWeight: 'normal', color: '#555' }}>{empresa} | {periodo}</h4>
+        <article key={idx} className="experiencia-article colorCard">
+          <h3>{cargo}</h3>
+          <h4>{empresa} | {periodo}</h4>
 
           <div>
             <h5>Responsabilidades:</h5>

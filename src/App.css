@@ -1,3 +1,6 @@
 .App .contenedor{
-    margin-left: 17rem
+    margin-left: 20rem
+}
+.colorCard{  
+    background-color: rgba(88, 75, 143, 0.85)
 }

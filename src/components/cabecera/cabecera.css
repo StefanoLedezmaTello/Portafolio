@@ -6,7 +6,6 @@
   left: 0;
   height: 100vh;
   width: 20rem;
-  background-color: #0d6efd;
   color: white;
   padding: 2rem 1.5rem;
   display: flex;
@@ -16,7 +15,17 @@
   box-sizing: border-box;
   z-index: 1000;
   overflow-y: auto;
+  background: linear-gradient(135deg, #1e1e2f, #2b2d42, #3a3d5c, #584b8f);
+  background-size: 600% 600%;
+  animation: gradientCabecera 10s ease infinite;
 }
+
+@keyframes gradientCabecera {
+  0%   { background-position: 100% 0%; }
+  50%  { background-position: 0% 100%; }
+  100% { background-position: 100% 0%; }
+}
+
 
 .cabecera__foto {
   width: 120px;
