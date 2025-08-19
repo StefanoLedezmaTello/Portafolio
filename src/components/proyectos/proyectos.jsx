@@ -39,8 +39,7 @@ const Proyectos = () => {
         {proyectosData.map(
           ({ id, titulo, imagen, descripcion, tecnologias, github }) => (
             <div key={id} className="proyecto-card colorCard">
-              <img src={imagen} alt={titulo} />
-              <div className="proyecto-card-content">
+                <div className="proyecto-card-content">
                 <h3>{titulo}</h3>
                 <p>{descripcion}</p>
                 <p>

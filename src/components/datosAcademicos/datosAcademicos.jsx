@@ -6,13 +6,13 @@ const datosAcademicos = {
       titulo: "Ingeniería en Informática",
       institucion: "Duoc UC",
       periodo: "2018 - 2022",
-      boton: "Ver Certificado de Título"
+      boton: "Ver Certificado de Título",
     },
     {
       titulo: "Diplomado en Ciberseguridad",
       institucion: "Duoc UC",
       periodo: "2023 - 2024",
-      boton: "Ver Certificado de Ciberseguridad"
+      boton: "Ver Certificado de Ciberseguridad",
     },
   ],
   certificaciones: [
@@ -58,14 +58,33 @@ const Academico = () => {
       {/* Certificaciones */}
       <div className="certificaciones">
         <h3>Certificaciones</h3>
-        <ul>
-          {datosAcademicos.certificaciones.map((cert, index) => (
-            <li className="formacionCard colorCard" key={index}>{cert}</li>
-          ))}
-        </ul>
+        <div className= "certificaciones-card-desktop">
+          <ul className="certificaciones-grid">
+            {datosAcademicos.certificaciones.map((cert, index) => (
+              <li className="formacionCard colorCard" key={index}>
+                {cert}
+              </li>
+            ))}
+          </ul>
+          <button
+            className="btn-certificado-total"
+            onClick={handleDescargarCertificados}
+          >
+            Descargar todas las certificaciones
+          </button>
+        </div>
 
-        <div className="btn-certificados-container">
-          <button className="btn-certificado-total" onClick={handleDescargarCertificados}>
+        {/* Vista móvil */}
+        <div className="certificaciones-card-mobile colorCard">
+          <ul>
+            {datosAcademicos.certificaciones.map((cert, index) => (
+              <li key={index}>{cert}</li>
+            ))}
+          </ul>
+          <button
+            className="btn-certificado-total"
+            onClick={handleDescargarCertificados}
+          >
             Descargar todas las certificaciones
           </button>
         </div>

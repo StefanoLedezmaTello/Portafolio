@@ -27,7 +27,7 @@
   overflow-y: auto;
   background: linear-gradient(135deg, #1e1e2f, #2b2d42, #3a3d5c, #584b8f);
   background-size: 600% 600%;
-  animation: gradientCabecera 10s ease infinite;
+  animation: gradientCabecera 7s ease infinite;
   transition: transform 0.3s ease;
 }
 
@@ -133,30 +133,6 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .cabecera {
-    transform: translateX(-100%);
-    width: 80%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  .cabecera.cabecera--open {
-    transform: translateX(0);
-  }
-
-  .hamburger-btn {
-    display: block;
-  }
-
-  .App .contenedor {
-    margin-left: 0;
-    padding-top: 6rem; 
-  }
-}
-
 /*headerMovil*/
 .header-movil {
   display: none;
@@ -167,7 +143,6 @@
   height: 5rem;
   background-color: rgba(88, 75, 143, 0.9);
   color: white;
-  display: flex;
   align-items: center;
   padding: 0 1rem;
   z-index: 1500;
@@ -193,15 +168,19 @@
   font-style: italic;
 }
 
-@media (max-width: 768px) {
-  .header-movil {
-    display: flex;
-  }
+.iconografia-header-movil {
+  display: flex;
+  
 }
-@media (min-width: 769px) {
-  .header-movil {
-    display: none;
-  }
+.iconografia-header-movil a{
+  text-decoration: none;
+  color: inherit;
+  padding: 0.3rem;
+  border-radius: 15px;
+}
+
+.iconografia-header-movil a:active{
+background-color: #7b5cf3;
 }
 
 /*datosAcademicos*/
@@ -237,7 +216,8 @@
   margin-bottom: 1rem;
 }
 
-.certificaciones ul {
+/* Tarjetas en grid para desktop y tablet */
+.certificaciones-grid {
   list-style: none;
   padding: 0;
   display: grid;
@@ -245,16 +225,33 @@
   gap: 1rem;
 }
 
-.certificaciones li {
+.certificaciones-grid li {
   padding: 0.8rem 1rem;
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
+
 .formacionCard {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Tarjeta única para móvil */
+.certificaciones-card-mobile {
+  display: none; /* Oculto en desktop */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.certificaciones-card-mobile ul {
+  list-style: none;
+  padding: 0;
+}
+
+.certificaciones-card-mobile li {
+  margin-bottom: 0.5rem;
 }
 
 /* Botones de certificados individuales */
@@ -383,6 +380,10 @@
   margin-bottom: 0.5rem;
 }
 
+.proyecto-card-content button {
+  bottom: 1rem;
+}
+
 .proyecto-btn {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
@@ -402,9 +403,47 @@
 }
 
 /*breakPoint*/
+@media (max-width: 767px) {
+  .header-movil {
+    display: flex;
+  }
+  .cabecera {
+    transform: translateX(-100%);
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
 
-@media (max-width: 768px) {
-.App .contenedor{
-    margin-left: 0rem
+  .cabecera.cabecera--open {
+    transform: translateX(0);
+  }
+
+  .hamburger-btn {
+    display: block;
+  }
+
+  .App .contenedor {
+    margin-left: 0;
+    padding-top: 6rem; 
+  }
+  .certificaciones-grid {
+    display: none; /* Ocultamos grid */
+  }
+
+  .certificaciones-card-mobile {
+    display: block; /* Mostramos tarjeta única */
+  }
+  .certificaciones-card-desktop button{
+    display: none;
+  }
 }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+}
+
+@media (min-width: 1024px) {
+
 }
