@@ -9,7 +9,7 @@ const data = {
   fotoPerfil: fotoPerfil,
   telefono: "+56 9 49445596",
   correo: "s.ledezma.tello@gmail.com",
-  github: "https://github.com/FanoRepo",
+  github: "https://github.com/StefanoLedezmaTello",
   linkedin: "https://www.linkedin.com/in/stefanoledezmatello",
   cvUrl: cvFile,
   tecnologias: [

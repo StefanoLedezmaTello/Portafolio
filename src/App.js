@@ -17,7 +17,7 @@ function App() {
     nombre: "Stefano Ledezma",
     perfil: "Desarrollador Fullstack",
     fotoPerfil: fotoPerfil,
-    github: "https://github.com/FanoRepo",
+    github: "https://github.com/StefanoLedezmaTello",
     linkedin: "https://www.linkedin.com/in/stefanoledezmatello",
     cvUrl: cvFile,
   };
