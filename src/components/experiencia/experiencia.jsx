@@ -12,11 +12,13 @@ const experiencia = [
       'Gestión de control de versiones e integración continua usando Git, Azure DevOps y TFS, asegurando trazabilidad y eficiencia en el desarrollo colaborativo.',
     ],
     logros: [
-      'Aumenté la eficiencia operativa en un 30% optimizando rendimiento y gestión de información.',
-      'Automatización del sistema de notificaciones que redujo errores y carga administrativa eliminando tareas manuales repetitivas.',
-      'Implementación de procesos de automatización con paquetes DTSX, mejorando precisión de datos y cumplimiento de plazos.',
-      'Desarrollo de herramientas para facilitar la visualización y entendimiento de movimientos financieros, mejorando la experiencia de usuario.',
-    ],
+      "Mejoré la eficiencia operativa optimizando la gestión de la información.",
+      "Automatizé el sistema de notificaciones, reduciendo errores y quitando carga administrativa al eliminar tareas manuales.",
+      "Creé procesos de automatización con paquetes DTSX para asegurar datos más precisos y cumplir plazos con mayor facilidad.",
+      "Desarrollé herramientas que hicieron más simple la visualización y comprensión de movimientos financieros, logrando una mejor experiencia para los usuarios."
+    ]
+
+
   },
   {
     empresa: 'IT People Profesionales Informáticos',

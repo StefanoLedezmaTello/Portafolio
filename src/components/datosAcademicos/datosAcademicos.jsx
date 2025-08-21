@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PreviewModal from "../../shared/modal";
 import certDiplomado from "../../assets/documentos/Certificado-diplomado.pdf";
 import certTitulo from "../../assets/documentos/Certificado-Titulo.pdf";
-import certificaciones from "../../assets/documentos/Certificado-Titulo.pdf"/* aca agrega el dcumento de las certificaciones */
+import certificaciones from "../../assets/documentos/certificaciones.pdf"
 
 const data = {
   certTitulo: certTitulo,
@@ -115,7 +115,7 @@ const Academico = () => {
               isOpen={modalOpen}
               onClose={() => setModalOpen(false)}
               fileUrl={documento}
-              title="Vista previa CV"
+              title="Vista previa documento"
             />
     </section>
   );
