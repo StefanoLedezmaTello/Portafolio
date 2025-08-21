@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/Portafolio/static/css/main.ff5d85fb.css",
-    "main.js": "/Portafolio/static/js/main.040c4069.js",
+    "main.css": "/Portafolio/static/css/main.c2d9b9c7.css",
+    "main.js": "/Portafolio/static/js/main.050d09df.js",
     "static/js/453.9da22925.chunk.js": "/Portafolio/static/js/453.9da22925.chunk.js",
     "static/media/CV-Stefano.pdf": "/Portafolio/static/media/CV-Stefano.1fd9023bb10909e0ef6e.pdf",
+    "static/media/certificaciones.pdf": "/Portafolio/static/media/certificaciones.ddd3d977230d58ff29b1.pdf",
     "static/media/Foto-perfil.jpg": "/Portafolio/static/media/Foto-perfil.ded31bf1e4491584897c.jpg",
+    "static/media/Certificado-diplomado.pdf": "/Portafolio/static/media/Certificado-diplomado.6124dd40c5b91eb71f3a.pdf",
+    "static/media/Certificado-Titulo.pdf": "/Portafolio/static/media/Certificado-Titulo.251f6645ca87b020b76f.pdf",
     "index.html": "/Portafolio/index.html",
-    "main.ff5d85fb.css.map": "/Portafolio/static/css/main.ff5d85fb.css.map",
-    "main.040c4069.js.map": "/Portafolio/static/js/main.040c4069.js.map",
+    "main.c2d9b9c7.css.map": "/Portafolio/static/css/main.c2d9b9c7.css.map",
+    "main.050d09df.js.map": "/Portafolio/static/js/main.050d09df.js.map",
     "453.9da22925.chunk.js.map": "/Portafolio/static/js/453.9da22925.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff5d85fb.css",
-    "static/js/main.040c4069.js"
+    "static/css/main.c2d9b9c7.css",
+    "static/js/main.050d09df.js"
   ]
 }
