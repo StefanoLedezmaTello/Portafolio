@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import PreviewModal from "../../shared/modal";
+import certDiplomado from "../../assets/documentos/Certificado-diplomado.pdf";
+import certTitulo from "../../assets/documentos/Certificado-Titulo.pdf";
+import certificaciones from "../../assets/documentos/Certificado-Titulo.pdf"/* aca agrega el dcumento de las certificaciones */
+
+const data = {
+  certTitulo: certTitulo,
+  certDiplomado: certDiplomado,
+  certificaciones: certificaciones
+};
 
 const datosAcademicos = {
   formacion: [
     {
+      id: 1,
       titulo: "Ingeniería en Informática",
       institucion: "Duoc UC",
       periodo: "2018 - 2022",
-      boton: "Ver Certificado de Título",
+      boton: "Ver Certificado",
     },
     {
+      id: 2,
       titulo: "Diplomado en Ciberseguridad",
       institucion: "Duoc UC",
       periodo: "2023 - 2024",
-      boton: "Ver Certificado de Ciberseguridad",
+      boton: "Ver Certificado",
     },
   ],
   certificaciones: [
@@ -28,9 +40,21 @@ const datosAcademicos = {
 };
 
 const Academico = () => {
-  const handleDescargarCertificados = () => {
-    // Aquí podrías implementar la descarga de un zip o redirección a un PDF
-    alert("Descargando todas las certificaciones...");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [documento, setDocumento] = useState();
+
+  const documentoAbrir = (item) => {
+    if (item.id === 1) {
+      setDocumento(data.certTitulo);
+    } else {
+      setDocumento(data.certDiplomado);
+    }
+    setModalOpen(true);
+  };
+
+  const certificado = () => {
+    setDocumento(certificaciones);
+    setModalOpen(true);
   };
 
   return (
@@ -48,14 +72,13 @@ const Academico = () => {
                 {item.institucion} | {item.periodo}
               </div>
               <div>
-                <button className="btn-certificado">{item.boton}</button>
+                <button className="btn-certificado" onClick={() => documentoAbrir(item)} >{item.boton}</button>
               </div>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* Certificaciones */}
       <div className="certificaciones">
         <h3>Certificaciones</h3>
         <div className= "certificaciones-card-desktop">
@@ -68,13 +91,12 @@ const Academico = () => {
           </ul>
           <button
             className="btn-certificado-total"
-            onClick={handleDescargarCertificados}
+            onClick={() => certificado()}
           >
             Descargar todas las certificaciones
           </button>
         </div>
 
-        {/* Vista móvil */}
         <div className="certificaciones-card-mobile colorCard">
           <ul>
             {datosAcademicos.certificaciones.map((cert, index) => (
@@ -83,12 +105,18 @@ const Academico = () => {
           </ul>
           <button
             className="btn-certificado-total"
-            onClick={handleDescargarCertificados}
+            onClick={() => setModalOpen(true)}
           >
             Descargar todas las certificaciones
           </button>
         </div>
       </div>
+      <PreviewModal
+              isOpen={modalOpen}
+              onClose={() => setModalOpen(false)}
+              fileUrl={documento}
+              title="Vista previa CV"
+            />
     </section>
   );
 };

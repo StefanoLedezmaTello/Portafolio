@@ -30,7 +30,7 @@ function App() {
         <SobreMi></SobreMi>
         <Proyectos></Proyectos>
         <Experiencia></Experiencia>
-        <DatosAcademicos></DatosAcademicos>
+        <DatosAcademicos menuOpen={menuOpen} setMenuOpen={setMenuOpen}></DatosAcademicos>
       </div>
     </div>
   );

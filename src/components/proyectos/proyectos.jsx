@@ -46,7 +46,7 @@ const Proyectos = () => {
                   <strong>Tecnologías:</strong> {tecnologias.join(", ")}
                 </p>
                 <button
-                  className="proyecto-btn"
+                  className="btn-proyecto"
                   onClick={() => window.open(github, "_blank")}
                 >
                   Ver en GitHub

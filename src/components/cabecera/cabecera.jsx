@@ -30,7 +30,6 @@ const Cabecera = ({ menuOpen, setMenuOpen }) => {
 
   return (
     <>
-      {/* Botón hamburguesa para móvil */}
       <button className="hamburger-btn" onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
