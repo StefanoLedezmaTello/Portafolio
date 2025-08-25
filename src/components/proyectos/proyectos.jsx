@@ -17,7 +17,7 @@ const proyectosData = [
     descripcion:
       "APIs para manejar información de compras, ventas y saldos de productos de una menestra.",
     tecnologias: [".NET", "SQL Server", "REST API"],
-    github: "https://github.com/tuusuario/apis-menestra",
+    github: "https://github.com/StefanoLedezmaTello/SistemaDeVentas",
   },
   {
     id: 3,
