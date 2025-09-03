@@ -25,9 +25,9 @@ const proyectosData = [
     // imagen:
     //   "https://via.placeholder.com/300x180?text=Sistema+Ventas+Minimarket",
     descripcion:
-      "Sistema de ventas con control de inventario, desarrollado con .NET, Vue, React y Bootstrap.",
-    tecnologias: [".NET", "Vue", "React", "Bootstrap"],
-    github: "https://github.com/tuusuario/sistema-ventas-minimarket",
+      "Sistema de ventas con control de inventario, desarrollado con React y Bootstrap.",
+    tecnologias: ["React", "Bootstrap"],
+    github: "https://github.com/StefanoLedezmaTello/portafolio",
   },
 ];
 
