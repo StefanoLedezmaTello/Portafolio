@@ -19,16 +19,16 @@ const proyectosData = [
     tecnologias: [".NET", "SQL Server", "REST API"],
     github: "https://github.com/StefanoLedezmaTello/SistemaDeVentas",
   },
-  {
-    id: 3,
-    titulo: "Sistema de Ventas Minimarket",
-    // imagen:
-    //   "https://via.placeholder.com/300x180?text=Sistema+Ventas+Minimarket",
-    descripcion:
-      "Sistema de ventas con control de inventario, desarrollado con React y Bootstrap.",
-    tecnologias: ["React", "Bootstrap"],
-    github: "https://github.com/StefanoLedezmaTello/portafolio",
-  },
+  // {
+  //   id: 3,
+  //   titulo: "Sistema de Ventas Minimarket",
+  //   // imagen:
+  //   //   "https://via.placeholder.com/300x180?text=Sistema+Ventas+Minimarket",
+  //   descripcion:
+  //     "Sistema de ventas con control de inventario, desarrollado con React y Bootstrap.",
+  //   tecnologias: ["React", "Bootstrap"],
+  //   github: "https://github.com/StefanoLedezmaTello/portafolio",
+  // },
 ];
 
 const Proyectos = () => {
