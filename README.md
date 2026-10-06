@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Portafolio + Cat Invaders (Android)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este repositorio contiene el portafolio web en React y un prototipo de juego Android inspirado en Space Invaders, pero con gatitos como enemigos.
 
-## Available Scripts
+## 1) Portafolio web (React)
 
-In the project directory, you can run:
+En la raíz del proyecto puedes ejecutar:
 
-### `npm start`
+- `npm start`
+- `npm test`
+- `npm run build`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 2) Juego Android: **Cat Invaders**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Se agregó una app base en:
 
-### `npm test`
+- `android-cat-invaders/`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Características iniciales
 
-### `npm run build`
+- Jugador controlado por arrastre horizontal.
+- Disparo con botón (`Disparar hilo 🧶`).
+- Enemigos tipo “gatito” en formaciones por filas.
+- Sistema simple de puntaje y vidas.
+- Pantalla de `Game Over` con botón de reinicio.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Abrir en Android Studio
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Abrir Android Studio.
+2. Seleccionar **Open** y elegir la carpeta `android-cat-invaders`.
+3. Esperar sincronización de Gradle.
+4. Ejecutar en un emulador o dispositivo Android (API 26+).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Próximos pasos recomendados
 
-### `npm run eject`
+- Reemplazar círculos por sprites de gatitos y efectos visuales.
+- Agregar disparos enemigos reales (proyectiles descendentes).
+- Añadir niveles y aumento de dificultad por oleadas.
+- Integrar sonidos y música.
+- Guardar récord local con DataStore.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Si quieres, en el siguiente paso te puedo ayudar a convertir este prototipo en un juego con arte pixel, menú principal, selección de dificultad y publicación en Play Store.
