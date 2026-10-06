@@ -27,6 +27,8 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.onSizeChanged
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
@@ -34,8 +36,18 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.random.Random
 
-data class EnemyCat(var x: Float, var y: Float, var alive: Boolean = true)
-data class Bullet(var x: Float, var y: Float, var active: Boolean = true)
+// Canvas reads these properties during drawing; every mutation invalidates that draw.
+class EnemyCat(x: Float, y: Float, alive: Boolean = true) {
+    var x by mutableStateOf(x)
+    var y by mutableStateOf(y)
+    var alive by mutableStateOf(alive)
+}
+
+class Bullet(x: Float, y: Float, active: Boolean = true) {
+    var x by mutableStateOf(x)
+    var y by mutableStateOf(y)
+    var active by mutableStateOf(active)
+}
 
 class GameEngine {
     var playerX by mutableStateOf(500f)
@@ -57,6 +69,11 @@ class GameEngine {
         lives = 3
         gameOver = false
         playerX = 500f
+        startWave()
+    }
+
+    // Used between waves: keep score, lives, gameOver and player position.
+    private fun startWave() {
         bullets.clear()
         cats.clear()
         catDirection = 1
@@ -78,7 +95,7 @@ class GameEngine {
 
         val livingCats = cats.filter { it.alive }
         if (livingCats.isEmpty()) {
-            reset()
+            startWave()
             return
         }
 
@@ -139,12 +156,12 @@ class GameEngine {
 }
 
 @Composable
-fun CatInvadersScreen(engine: GameEngine) {
+fun CatInvadersScreen(engine: GameEngine, runGameLoop: Boolean = true) {
     var width by remember { mutableStateOf(1080f) }
     var height by remember { mutableStateOf(1920f) }
 
-    LaunchedEffect(Unit) {
-        while (true) {
+    LaunchedEffect(engine, runGameLoop) {
+        while (runGameLoop) {
             engine.update(width, height)
             delay(16)
         }
@@ -176,16 +193,17 @@ fun CatInvadersScreen(engine: GameEngine) {
             modifier = Modifier
                 .weight(1f)
                 .fillMaxWidth()
-                .pointerInput(Unit) {
+                .pointerInput(engine) {
                     detectDragGestures { _, dragAmount ->
                         engine.playerX = max(50f, min(width - 50f, engine.playerX + dragAmount.x))
                     }
                 },
             contentAlignment = Alignment.BottomCenter
         ) {
-            Canvas(modifier = Modifier.fillMaxSize()) {
-                width = size.width
-                height = size.height
+            Canvas(modifier = Modifier.fillMaxSize().testTag("game-canvas").onSizeChanged {
+                width = it.width.toFloat()
+                height = it.height.toFloat()
+            }) {
 
                 drawCircle(
                     color = Color(0xFF55D6BE),
